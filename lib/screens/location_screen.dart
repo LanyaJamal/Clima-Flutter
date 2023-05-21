@@ -27,7 +27,7 @@ class _LocationScreenState extends State<LocationScreen> {
   }
 
   void UpdateUi(dynamic weatherData) {
-          inspect(weatherData);
+    inspect(weatherData);
 
     setState(() {
       if (weatherData == null) {
@@ -98,9 +98,8 @@ class _LocationScreenState extends State<LocationScreen> {
                             return CityScreen();
                           },
                         ),
-                      );
+                      );//xoshmawey
                       if (typeName != null) {
-                        print(typeName);
                         var weatherData =
                             await weather.getCityWeather(typeName);
                         UpdateUi(weatherData);
