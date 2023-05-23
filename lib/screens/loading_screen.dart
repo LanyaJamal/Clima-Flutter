@@ -1,15 +1,12 @@
-
-
 import 'package:clima/screens/location_screen.dart';
 import 'package:clima/services/weather.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-
-
 const APiKey = "d1b45fdd28649f7cdba46647cfc79036";
-const openWeatherMapUrl='https://api.openweathermap.org/data/2.5/weather?lat=';
+const openWeatherMapUrl =
+    'https://api.openweathermap.org/data/2.5/weather?lat=';
 
 class LoadingScreen extends StatefulWidget {
   @override
@@ -27,7 +24,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
     super.initState();
   }
 
-    void getLocationData() async {
+  void getLocationData() async {
     var weatherData = await WeatherModel().getLocationWeather();
 
     Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -36,7 +33,6 @@ class _LoadingScreenState extends State<LoadingScreen> {
       );
     }));
   }
-
 
   // void getdata() async {
   //   // get location
@@ -75,10 +71,9 @@ class _LoadingScreenState extends State<LoadingScreen> {
   //       return LocationScreen(locationweather: decodedata,);
   //     }));
 
-
   // // var data = jsonDecode(response.body);
   // //     inspect(data);
-      
+
   //   } else {
   //     print(response.statusCode);
   //   }
@@ -88,10 +83,10 @@ class _LoadingScreenState extends State<LoadingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: SpinKitDoubleBounce(
-          color: Colors.white,
-          size: 100.0,
-        )
+        child: SpinKitWaveSpinner(
+        size: 100,
+        color: Colors.grey.shade400,
+        ),
         // CupertinoButton(
         //   onPressed: () {
         //     ePrint("day");

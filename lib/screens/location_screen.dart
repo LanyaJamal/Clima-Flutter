@@ -64,17 +64,17 @@ class _LocationScreenState extends State<LocationScreen> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/location_background.jpg'),
+            image: AssetImage('images/images.png'),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
-                Colors.white.withOpacity(0.8), BlendMode.dstATop),
+                Colors.white.withOpacity(0.9), BlendMode.dstATop),
           ),
         ),
-        constraints: BoxConstraints.expand(),
+        // constraints: BoxConstraints.expand(),
         child: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            // crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -85,8 +85,8 @@ class _LocationScreenState extends State<LocationScreen> {
                       UpdateUi(weatherData);
                     },
                     child: Icon(
-                      Icons.near_me,
-                      size: 50.0,
+                      Icons.near_me_rounded,
+                      size: 30.0,
                     ),
                   ),
                   CupertinoButton(
@@ -106,14 +106,14 @@ class _LocationScreenState extends State<LocationScreen> {
                       }
                     },
                     child: Icon(
-                      Icons.location_city,
-                      size: 50.0,
+                      Icons.location_pin,
+                      size: 30.0,
                     ),
                   ),
                 ],
               ),
               Padding(
-                padding: EdgeInsets.only(left: 15.0),
+                padding: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
                 child: Row(
                   children: <Widget>[
                     Text(
@@ -128,7 +128,7 @@ class _LocationScreenState extends State<LocationScreen> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(right: 15.0),
+                padding: EdgeInsets.only(right: 20,bottom: 40),
                 child: Text(
                   " $weatherMessage in $cityName",
                   textAlign: TextAlign.right,
